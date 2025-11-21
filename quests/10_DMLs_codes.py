@@ -38,7 +38,7 @@ print("PostgreSQL 데이터베이스에 성공적으로 연결되었습니다.")
 #     for record in records :
 #         print(f'나이가 22세 이상인 학생 : {record[0]}')
 
-#  name 이 “홍길동”인 학생만 조회
+# - name 이 “홍길동”인 학생만 조회
 # with conn.cursor() as cursor :   
     # cursor.execute ("SELECT name FROM students WHERE name = '홍길동';")
     # records = cursor.fetchall()
@@ -48,22 +48,24 @@ print("PostgreSQL 데이터베이스에 성공적으로 연결되었습니다.")
 
 # 📌 문제 4 — UPDATE 연습
 # ✔ 요구사항
-# id = 2 인 학생의 나이를 25로 수정하시오.  
+# id = 3e31c685-9410-4de2-b0d9-0674a9845da0 인 학생의 나이를 25로 수정하시오.  
 with conn.cursor() as cursor :
     cursor.execute ("""UPDATE students
                     SET age = '25'
                     WHERE id = '3e31c685-9410-4de2-b0d9-0674a9845da0';""")
 
-# Option : select 통한 UUID id 가져와서 삭제  
+# Option : select 통한 UUID id 가져와서 update
 
-# 📌 문제 5 — DELETE 연습
-# ✔ 요구사항
-# id = 3 번 학생 데이터를 삭제하는 DELETE 문을 작성하시오.
 
-with conn.cursor() as cursor :
-    cursor.execute ("DELETE FROM students WHERE id = 0252dbab-8307-469b-ae8e-ca30d92f1d42;")
+# 📌 문제 5 — DELETE
+# #  연습
+# # ✔ 요구사항
+# # id = 3 번 학생 데이터를 삭제하는 DELETE 문을 작성하시오.
 
-# Option : select 통한 UUID id 가져와서 삭제
+# with conn.cursor() as cursor :
+#     cursor.execute ("DELETE FROM students WHERE id = 0252dbab-8307-469b-ae8e-ca30d92f1d42;")
+
+# # Option : select 통한 UUID id 가져와서 삭제
 
 
 conn.commit() # 완료

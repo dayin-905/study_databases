@@ -5,3 +5,4 @@
 UPDATE persons
 SET firstname = 'smith', lastname = 'black'
 WHERE personid = 2;
+

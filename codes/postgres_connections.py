@@ -47,4 +47,3 @@ conn.commit() # 완료
 # except psycopg2.OperationalError as e:
 #     print(f"데이터베이스 연결에 실패했습니다: {e}")
 #     print("연결 정보를 확인하거나 Docker 컨테이너가 실행 중인지 확인하세요.")
-
